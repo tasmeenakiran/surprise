@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Bestoo 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#fffaf7;
+  --text:#222;
+  --accent:#ff7aa2;
+  --glass:rgba(255,255,255,0.6);
+}
+
+.dark{
+  --bg:#0f0f12;
+  --text:#eee;
+  --glass:rgba(255,255,255,0.05);
+}
+
+*{box-sizing:border-box; scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  font-family:Poppins,sans-serif;
+  background: linear-gradient(to right,#ff7aa2,#ffe4ec);
+  color: brown;
+  transition:0.4s;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  width:100%;
+  padding:15px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  backdrop-filter:blur(12px);
+  background:var(--glass);
+  z-index:1000;
+}
+
+.menu{
+  display:flex;
+  gap:20px;
+}
+
+.menu a{
+  text-decoration:none;
+  color:var(--text);
+  position:relative;
+}
+
+.menu a::after{
+  content:'';
+  position:absolute;
+  width:0;
+  height:2px;
+  background:var(--accent);
+  left:0;
+  bottom:-5px;
+  transition:0.3s;
+}
+.menu a:hover::after{width:100%;}
+
+/* MOBILE MENU */
+.toggle{display:none; cursor:pointer; font-size:22px;}
+@media(max-width:768px){
+  .menu{
+    position:absolute;
+    top:60px;
+    right:-100%;
+    flex-direction:column;
+    background:var(--glass);
+    width:200px;
+    padding:20px;
+    transition:0.4s;
+  }
+  .menu.active{right:0;}
+  .toggle{display:block;}
+}
+
+/* SECTIONS */
+section{
+  min-height:100vh;
+  padding:120px 20px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  opacity:0;
+  transform:translateY(60px);
+  transition:1s;
+}
+
+section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+h1{
+  font-family:'Playfair Display';
+  font-size:42px;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#ffe4ec,#fff);
+}
+
+/* GLASS CARD */
+.card{
+  background:var(--glass);
+  backdrop-filter:blur(12px);
+  padding:20px;
+  border-radius:20px;
+  margin:10px;
+  width:250px;
+  transition:0.3s;
+}
+.card:hover{
+  transform:translateY(-10px) scale(1.03);
+}
+
+/* BUTTON */
+button{
+  padding:12px 28px;
+  border:none;
+  border-radius:30px;
+  background:var(--accent);
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+button:hover{
+  transform:scale(1.08);
+}
+
+/* MAGNET EFFECT */
+.magnet{
+  display:inline-block;
+}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  backdrop-filter:blur(10px);
+}
+.modal.active{display:flex;}
+
+.modal-box{
+  background:var(--bg);
+  padding:30px;
+  border-radius:20px;
+  transform:scale(0.7);
+  opacity:0;
+  transition:0.4s;
+}
+.modal.active .modal-box{
+  transform:scale(1);
+  opacity:1;
+}
+
+/* DARK MODE BTN */
+.mode{
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h2>Bestoo 💖</h2>
+  <div class="toggle" onclick="menuToggle()">☰</div>
+  <div class="menu" id="menu">
+    <a href="#about">About</a>
+    <a href="#memories">Memories</a>
+    <a href="#letter">Letter</a>
+  </div>
+  <span class="mode" onclick="toggleMode()">🌙</span>
+</nav>
+
+<section class="hero">
+  <h1>For My Favorite Person 💕</h1>
+  <h3>The One and only</h3>
+  <h1>My Bestoooo💖💗💖</h1>
+  <div class="magnet">
+    <button onclick="scrollToSection('about')">Start</button>
+  </div>
+</section>
+
+<section id="about">
+  <h1>Why You Matter</h1>
+  <p>You matter — not because of what you do, but because of who you are.
+
+Life can make you feel invisible sometimes, but that doesn’t change your value. You are important in your own way, even when you don’t see it.
+
+Don’t let bad days make you forget your worth. You are special and more meaningful than you think 💫
+</p>
+</section>
+
+<section id="memories">
+  <h1>Memories</h1>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;">
+    <div class="card">Late night talks 🌙<br>Hey bestie 💛
+
+Hum pehle jitni baat nahi karte ab, but I just want you to know — you still matter to me the same way.
+
+Sometimes life gets busy and distance aa jati hai, but real connections fade nahi hoti.
+
+I don’t want awkwardness between us… I just want things to stay soft and real, even if we talk less.
+
+You’re still important to me 🌷
+</div>
+    <div class="card">Random laughs 😂<br>You know what I miss? 😭💛
+Those random laughs we used to have over the smallest stupid things.
+
+It wasn’t even funny half the time, but still we would laugh like crazy 😂
+Ab woh moments thore kam ho gaye hain… but memories still make me smile 🌷
+</div>
+    <div class="card">Best moments 💫<br>I was just thinking about our best moments together 💛Our best moments were never planned 💛
+They just happened… in the most simple and real ways
+
+Those little times we didn’t even realize were special… laughing over silly things, random talks, and just being comfortable around each other without any effort.
+
+Those moments will always stay close to my heart 🌷
+No matter how much time passes, I’ll always smile when I remember them.
+</div>
+  </div>
+</section>
+
+<section id="letter">
+  <h1>A Letter</h1>
+  <p>Hey bestie 💛
+
+I don’t even know how to start this, but I just wanted to write something from my heart.
+
+Pehle hum kitni baat karte thay… har choti choti baat share karte thay, random laughs, silly jokes, aur woh moments jab kuch bhi funny nahi hota tha phir bhi hum has has ke pagal ho jate thay 😂💛
+
+Ab shayad hum utni baat nahi karte, life busy ho gayi hai, sab kuch thora change ho gaya hai… but honestly, that never changed how I feel about you.
+
+For me, you are still someone really special.
+Distance can never change what real friendship means. Even if we don’t talk every day, it doesn’t mean the bond is weak. It just means life is moving… but our memories are still there, safe in my heart 🌸
+
+I miss those small moments sometimes… the random talks, the comfort, and just knowing that someone is always there. But I also believe that real friends don’t need constant conversations to stay close.
+
+I just want you to know that no matter how far we are or how less we talk, you still matter to me. Always 💛
+
+And I hope that one day, we can sit again, laugh again, and talk like nothing ever changed ✨
+
+Take care of yourself… and never forget you are important to me 🌷
+
+— Always your friend 💛
+</p>
+  <button onclick="openModal()">Final Surprise 🎁</button>
+</section>
+
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <h2>I don’t say it enough… but you really matter to me.You’re my safe place 💖</h2>
+    <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+
+/* SCROLL ANIMATION */
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+},{threshold:0.2});
+
+document.querySelectorAll('section').forEach(sec=>{
+  observer.observe(sec);
+});
+
+/* MENU */
+function menuToggle(){
+  document.getElementById("menu").classList.toggle("active");
+}
+
+/* DARK MODE */
+function toggleMode(){
+  document.body.classList.toggle("dark");
+}
+
+/* SMOOTH SCROLL */
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+/* MODAL */
+function openModal(){
+  document.getElementById("modal").classList.add("active");
+}
+function closeModal(){
+  document.getElementById("modal").classList.remove("active");
+}
+
+/* MAGNET EFFECT */
+document.querySelectorAll('.magnet').forEach(el=>{
+  el.addEventListener('mousemove',e=>{
+    let rect=el.getBoundingClientRect();
+    let x=e.clientX-rect.left-rect.width/2;
+    let y=e.clientY-rect.top-rect.height/2;
+    el.style.transform=`translate(${x*0.2}px,${y*0.2}px)`;
+  });
+  el.addEventListener('mouseleave',()=>{
+    el.style.transform='translate(0,0)';
+  });
+});
+
+</script>
+<script>
+function createFlower() {
+  const flower = document.createElement("div");
+  flower.innerHTML = "🌸🌹❣🎈";
+  flower.style.position = "fixed";
+  flower.style.top = "-20px";
+  flower.style.left = Math.random() * window.innerWidth + "px";
+  flower.style.fontSize = (Math.random() * 10 + 15) + "px";
+  flower.style.opacity = Math.random();
+  flower.style.zIndex = "999";
+  flower.style.pointerEvents = "none";
+  flower.style.transition = "transform linear";
+
+  document.body.appendChild(flower);
+
+  let fallDuration = Math.random() * 5 + 5;
+
+  flower.animate([
+    { transform: "translateY(0px) rotate(0deg)" },
+    { transform: `translateY(${window.innerHeight + 50}px) rotate(360deg)` }
+  ], {
+    duration: fallDuration * 1000,
+    easing: "linear"
+  });
+
+  setTimeout(() => flower.remove(), fallDuration * 1000);
+}
+
+setInterval(createFlower, 300);
+</script>
+
+</body>
+</html>
